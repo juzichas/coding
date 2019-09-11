@@ -1,0 +1,39 @@
+float h2;
+float w2;
+
+void setup() {
+  size (197,197);
+  background (99, 99, 222);
+  noStroke();
+  println(height);
+  println(width);
+  
+h2 = height/2;
+w2 = width/2;
+ }
+void draw() {
+  
+  
+  //rectangle code
+  rectMode(CENTER);
+  
+  fill(82,230,255);
+  rect(h2,w2,16*10,9*10);
+  
+  fill(255,82,103);
+  rect(h2,w2,16*8,9*8);
+ 
+ //triangle code
+  fill (196,255,233);  //triangle(width*.50,72/2,128/2,82/3,128/
+  translate(-5,12);
+  triangle(75,100,130,100,100,60);
+  
+  //ellipse code
+  translate (3,-12);
+  fill (252,0,0);
+  ellipse(h2,w2, 18,20);
+  
+  //added feature in class
+  //strokeWeight(10);
+  //line(width/2,0,width/2,);
+}
