@@ -1,0 +1,32 @@
+//calculates pecentages- you put a number that you would like the percentage of in the number value, and the percent in percent- for example, 50 percent of 100, would be entered as
+//percentcalc(100, 50);
+float percentcalc (int number, int percent ) {
+  float actpercent= percent*0.01;
+  float result = actpercent * number;
+  print(result);
+  return result;
+}
+
+// self explantory- adds three numbers together  
+int numberadder (int numa, int numb, int numc) {
+  int add = numa + numb + numc;
+  print(add);
+  return add;
+}
+
+// gets name
+String namegetter(String name){
+  
+  print("your name is" + name);
+  print("hello" + name);
+  print("it's nice to meet you!");
+  return name;
+ 
+
+//greeter - says hello
+void greeter(name){
+namegetter(name);
+}
+
+  
+
