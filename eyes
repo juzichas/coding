@@ -1,0 +1,27 @@
+void setup() {
+  size(600, 600);
+  noStroke();
+}
+
+void draw() {
+  background(0);
+ float  co = lerp(0, 255, 0.5);
+ float  xa = map(mouseX, 0, width, 280, 320); 
+ float  xb = map(mouseX, 0, width, 120, 190 ); 
+ float  y1 = map(mouseY, 0, height, 50, 255); 
+  
+  ellipse(width/2, height/2, 120,120);
+  ellipse(width/4, height/2, 120, 120);
+fill(255,255,y1);
+
+ ellipse(xa, height/2, 60,60);
+ ellipse(xb, height/2, 60, 60);
+ fill (co,0,y1);
+  
+  println(mouseX); 
+  println(mouseY); 
+  
+    
+
+  
+  }
