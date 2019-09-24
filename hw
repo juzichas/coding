@@ -1,0 +1,111 @@
+
+float distance;
+float circler;
+float hnw;
+
+
+float r;
+int g;
+int b;
+
+boolean lightsoff = false;
+boolean insideCircle = false;
+
+
+
+int speedx;
+int speedy;
+
+int ballsize;
+
+float ballposx;
+float ballposy;
+
+float xpos;
+float ypos;
+
+void setup() {
+
+  size(600, 600); 
+  hnw = 100;
+
+  ballsize = 50;
+}
+
+void draw() {
+
+  //detecting distance
+
+
+  ballposx = width/2;
+  ballposy = height/2;
+
+  speedx= int(random(10, 20));
+  speedy= int(random(10, 15));
+
+
+  r = int(random(99, 255));
+  g = int(random(99, 255));
+  b = int(random(99, 255));
+  distance = dist(300, 300, mouseX, mouseY);
+
+  println(distance);
+
+  // detecting inside shape and changing boolean
+  if (distance < hnw/2) {
+
+    insideCircle = true;
+  } else {
+    insideCircle = false;
+  }
+
+
+  if (insideCircle == true) {
+
+    background(255, 255, 255);
+    println("true as fuck dude!");
+  } else {
+
+    background(255, 99, 80);
+  }
+  fill(0, 0, 0);  
+  ellipse(width/2, height/2, hnw, hnw);
+
+
+  // bouncing ball 
+
+
+
+  ballposx =+ ballposx+speedx;
+  ballposy=+ ballposy+speedy;
+
+
+  if (ballposx > width - ballsize || ballposx < ballsize) {
+
+    speedx *= -1;
+  }
+
+  if (ballposy > height- ballsize || ballposy < ballsize) {
+
+    speedy *= -1;
+  }
+
+  fill(r, g, b);
+  ellipse(ballposx, ballposy, ballsize, ballsize);
+
+
+  //// click to move ball
+}
+
+void mousePressed() {
+  xpos = width/2;
+  ypos = height/2;
+
+  if (distance < hnw/2) {
+    xpos = random(150, 500);
+    ypos = random(100, 600);
+  }
+
+  fill(0, 0, 255);
+  ellipse(xpos, ypos, 45, 45);
+}
