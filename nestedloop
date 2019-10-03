@@ -1,0 +1,23 @@
+int esize = 200; 
+int csize = 800;
+int move;
+void setup(){
+  size(800,800);
+  
+  noStroke();
+}
+
+
+void draw(){
+background(172,200,0);
+for (int i = 2; i <=8; i++){  
+  for(int j = 100; i < 800; i++){
+  
+  move = mouseX/j;  
+    
+  fill(csize/i,255,0);
+  ellipse(100*i,400, esize/i * move, esize/i * move);
+  
+}
+}
+}
