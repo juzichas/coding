@@ -1,0 +1,49 @@
+
+Player myPlayer;
+PImage start;
+PImage bg;
+
+int rows = 9;
+int columns = 9;
+int size = 77;
+
+Boolean startOrNot = false;
+
+//test
+int xpos = 10;
+int ypos = 680;
+
+int number[][] = {{1, 1, 1, 1, 1, 1, 0, 1, 0}, {0, 1, 0, 0, 1, 0, 0, 1, 0}, {0, 1, 0, 0, 1, 1, 0, 1, 0}, {0, 1, 0, 0, 0, 1, 0, 0, 0}, {1, 0, 0, 0, 0, 1, 1, 0, 0}, {1, 0, 0, 1, 0, 1, 0, 0, 0}, {1, 1, 1, 1, 0, 0, 1, 0, 1}, {0, 1, 0, 0, 1, 0, 0, 0, 1}, {0, 1, 0, 0, 1, 0, 0, 0, 1}, {0, 0, 0, 0, 0, 01, 0, 1}};
+
+void setup() {
+  size(700, 700);
+
+  start = loadImage("startscreen.png");
+  start.resize(height, width);
+
+  bg = loadImage("bg.png");
+  bg.resize(height, width);
+}
+
+void draw() {
+
+
+  image(start, 0, 0);
+  start.resize(height, width);
+  image(start, 0, 0);
+
+
+  if (keyPressed) {
+    if (keyCode == DOWN){
+      startOrNot = true;
+    }
+  }
+
+  if (startOrNot == true) {
+    image(bg, 0, 0);
+    bg.resize(height, width);
+    image(bg, 0, 0);
+
+    loadGame();
+  }
+}
